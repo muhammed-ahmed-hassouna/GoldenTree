@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول</title>
+    <link rel="stylesheet" href="/signup.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>تسجيل الدخول  كمتبرع</h2>
+        <form id="LoginForm" action="http://localhost:5000/loginDonOrg" method="post" enctype="application/x-www-form-urlencoded">
+            <label for="email">البريد الإلكتروني:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">كلمة المرور:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">تسجيل الدخول</button>
+            <!-- <div class="g-signin2" data-onsuccess="onGoogleSignIn" data-onfailure="onGoogleSignInFailure"></div> -->
+
+            <a href="/LoginB"> <div> تسجيل الدخول كمنظمة مستفيدة</div>
+                <a href="/Signup"> <div>تسجيل كمنظمة تبرع</div>
+                <a href="/auth/google"> <div>تسجيل الدخول باستخدام جوجل</div>
+        </form>
+    </div>
+    <script>
+        document.getElementById('LoginForm').addEventListener('submit', async function (event) {
+            // Prevent the default form submission
+            event.preventDefault();
+
+            // Capture form data
+            const formData = new FormData(this);
+
+            try {
+                // Manually encode the form data
+                const encodedFormData = new URLSearchParams(formData).toString();
+
+                // Fetch request when the form is submitted
+                const response = await fetch('http://localhost:5000/loginDonOrg', {
+                    method: 'POST',
+                    body: encodedFormData,
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                });
+
+                const data = await response.json();
+
+                // Check if the response includes a redirect property
+                if (data.redirect) {
+                    // Redirect to the specified URL
+                    window.location.href = data.redirect;
+                } else {
+                    // Handle other aspects of the response
+                    console.log(data.message);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        });
+    </script>
+</body>
+
+</html>

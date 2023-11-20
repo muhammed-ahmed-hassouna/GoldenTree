@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <%- include("./partials/head.ejs") %>
+<body>
+  <section class="container-success text-center">
+    <h1>تم إرسال طلبك بنجاح. شكرًا لك</h1>
+    <h1>طلبك تحت المراجعة</h1>
+  </section> 
+  <script>
+    // تأخير التوجيه إلى الصفحة الرئيسية بعد 3 ثوان
+    setTimeout(function(){
+      window.location.href = "/";
+    }, 5000);
+  </script>
+</body>
+</html>
+

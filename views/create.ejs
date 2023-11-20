@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("./partials/head.ejs") %>
+<body>
+  <%- include("./partials/nav.ejs") %>
+  <div class="container">
+    <h1 class="donation-heading">اطلب المساعدة من أجل وطن أجمل</h1>
+    <div class="donation-description">
+      <form action="http://localhost:5000/Add_New_Afforested_Activity" enctype="multipart/form-data" method="POST">
+        <label for="placeName">اسم المنشأة </label>
+        <input type="text" id="placeName" name="placeName" required>
+
+        <label for="areasLocation">الموقع</label>
+        <input type="text" id="areasLocation" name="areasLocation" required>
+
+        <label for="treesPlanted">عدد الأشجار المطلوبة</label>
+        <input type="text" id="treesPlanted" name="treesPlanted" required>
+
+        <label for="descriptionAfforested">الوصف</label>
+        <textarea id="descriptionAfforested" name="descriptionAfforested" required></textarea>
+
+        <label for="image">صورة للموقع</label>
+        <input type="file" id="image" name="image" required>
+
+        <button type="submit">ابعث</button>
+      </form>
+    </div>
+  </div>
+  <%- include("./partials/footer.ejs") %>
+</body>
+</html>

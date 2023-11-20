@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل في BenOrg</title>
+    <link rel="stylesheet" href="/signup.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>التسجيل كمستفيد</h2>
+        <form id="registrationFormB" action="http://localhost:5000/registerBenOrg" method="post" enctype="application/x-www-form-urlencoded">
+            <label for="orgName">اسم المنظمة:</label>
+            <input type="text" id="orgName" name="orgName" required>
+
+            <label for="orgId">رقم المنظمة:</label>
+            <input type="text" id="orgId" name="orgId" required>
+
+            <label for="address">العنوان:</label>
+            <input type="text" id="address" name="address" required>
+
+            <label for="email">البريد الإلكتروني:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">كلمة المرور:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="confirm_password">تأكيد كلمة المرور:</label>
+            <input type="password" id="confirm_password" name="confirm_password" required>
+
+            <label for="phoneNumber">رقم الهاتف:</label>
+            <input type="tel" id="phoneNumber" name="phoneNumber" pattern="[0-9]{10}" required>
+
+            <button type="submit">تسجيل</button>
+            <a href="/Signup"> <div>تسجيل كمنظمة تبرع</div>
+            <a href="/Login"> <div>لديك حساب بالفعل؟</div>
+            <a href="/auth/google"> <div>التسجيل باستخدام جوجل</div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('registrationFormB').addEventListener('submit', async function (event) {
+            // Prevent the default form submission
+            event.preventDefault();
+
+            // Capture form data
+            const formData = new FormData(this);
+
+            try {
+                // Manually encode the form data
+                const encodedFormData = new URLSearchParams(formData).toString();
+
+                // Fetch request when the form is submitted
+                const response = await fetch('http://localhost:5000/registerBenOrg', {
+                    method: 'POST',
+                    body: encodedFormData,
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                });
+
+                const data = await response.json();
+
+                // Check if the response includes a redirect property
+                if (data.redirect) {
+                    // Redirect to the specified URL
+                    window.location.href = data.redirect;
+                } else {
+                    // Handle other aspects of the response
+                    console.log(data.message);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        });
+    </script>
+</body>
+
+</html>

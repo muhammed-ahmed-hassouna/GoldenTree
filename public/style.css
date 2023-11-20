@@ -1,0 +1,644 @@
+.carousel-item {
+  height: 65vh;
+  min-height: 350px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+body.dark {
+  background: #232223;
+  color:white;
+}
+
+.h1-heading {
+  text-align: center;
+  margin-top: 50px;
+}
+
+h1 {
+  color: #228B22;
+  background-color: #f0f8f7;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(34, 139, 34, 0.2);
+  display: block;
+  width: 100%; /* جعل العنصر يحتل العرض الكامل */
+  font-size: 24px;
+  font-family: 'Cursive', sans-serif;
+}
+
+/* إضافة هامة: ضبط الخطوط لتكون أوضح وأسهل قراءة */
+body {
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff; /* خلفية بيضاء للصفحة */
+}
+
+.container-Afforested{
+  display:flex;
+  flex-direction:row;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+  font-family: 'Roboto', sans-serif;
+  transition:.25s;
+}
+
+.credit {
+  position: absolute;
+  bottom:20px;
+  left:20px;
+  color:inherit;
+}
+
+.options {
+  display:flex;
+  flex-direction:row;
+  align-items:stretch;
+  overflow:hidden;
+  min-width:600px;
+  max-width:900px;
+  width:calc(100% - 100px);
+  height:400px;
+}
+
+.options .option {
+  position: relative;
+  overflow:hidden;
+  min-width:60px;
+  margin:10px;
+  background:var(--optionBackground, var(--defaultBackground, #E6E9ED));
+  background-size:auto 120%;
+  background-position:center;
+  cursor: pointer;
+  transition:.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+}
+
+.options .option.active {
+  flex-grow:10000;
+  transform:scale(1);
+  max-width:600px;
+  margin:0px;
+  border-radius:40px;
+  background-size:auto 100%;
+}
+
+.options .option:not(.active) {
+  flex-grow:1;
+  border-radius:30px;
+}
+
+.options .option .shadow {
+  position: absolute;
+  bottom:0px;
+  left:0px;
+  right:0px;
+  height:120px;
+  transition:.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+}
+
+.options .option .label {
+  display:flex;
+  position: absolute;
+  right:0px;
+  height:40px;
+  transition:.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+}
+
+.options .option .label .icon {
+  display:flex;
+  flex-direction:row;
+  justify-content:center;
+  align-items:center;
+  min-width:40px;
+  max-width:40px;
+  height:40px;
+  border-radius:100%;
+  background-color:white;
+  color:var(--defaultBackground);
+}
+
+.options .option .label .info {
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  margin-left:10px;
+  color:white;
+  white-space: pre;
+  .info > div {
+     position: relative;
+     transition:.5s cubic-bezier(0.05, 0.61, 0.41, 0.95), opacity .5s ease-out;
+  }
+  .info .main {
+     font-weight:bold;
+     font-size:1.2rem;
+  }
+  .info .sub {
+     transition-delay:.1s;
+  }
+}
+
+.options .option.active .shadow {
+  box-shadow:inset 0 -120px 120px -120px black, inset 0 -120px 120px -100px black;
+}
+
+.options .option:not(.active) .shadow {
+  bottom:-40px;
+  box-shadow:inset 0 -120px 0px -120px black, inset 0 -120px 0px -100px black;
+}
+
+.options .option.active .label {
+  bottom:20px;
+  left:20px;
+}
+
+.options .option:not(.active) .label {
+  bottom:10px;
+  left:10px;
+}
+
+.options .option .label .info > div {
+  left:0px;
+  opacity:1;
+}
+
+.options .option:not(.active) .label .info > div {
+  left:20px;
+  opacity:0;
+}
+
+/* _________________________________________________________ */
+
+.container-WillAfforested{
+  display:flex;
+  flex-direction:row;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+  font-family: 'Roboto', sans-serif;
+  transition:.25s;
+}
+
+
+body
+{
+  background-color:#f2f2f2;
+  font-family: 'RobotoDraft', 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.navbar-expand-lg .navbar-collapse {
+  justify-content: center
+}
+
+*
+{
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+h5
+{
+  margin:0px;
+  font-size:1.4em;
+  font-weight:700;
+}
+
+p
+{
+  font-size:12px;
+}
+
+.center
+{
+  height:50vh;
+  gap: 5%;
+  width:90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* End Non-Essential  */
+
+.property-card
+{
+  height:18em;
+  width:14em;
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-orient:vertical;
+  -webkit-box-direction:normal;
+  -ms-flex-direction:column;
+  flex-direction:column;
+  position:relative;
+  -webkit-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -o-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  border-radius:16px;
+  overflow:hidden;
+  -webkit-box-shadow:  15px 15px 27px #e1e1e3, -15px -15px 27px #ffffff;
+  box-shadow:  15px 15px 27px #e1e1e3, -15px -15px 27px #ffffff;
+}
+/* ^-- The margin bottom is necessary for the drop shadow otherwise it gets clipped in certain cases. */
+
+/* Top Half of card, image. */
+
+.property-image
+{
+  height:6em;
+  /* width:14em;
+  padding:1em 2em;
+  position:Absolute;
+  top:0px; */
+  -webkit-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -o-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  background-size:cover;
+  background-repeat:no-repeat;
+}
+
+/* Bottom Card Section */
+
+.property-description
+{
+  background-color: #FAFAFC;
+  height:12em;
+  width:14em;
+  position:absolute;
+  bottom:0em;
+  -webkit-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -o-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  padding: 0.5em 1em;
+  text-align:center;
+}
+
+/* Social Icons */
+.img_WillAfforestedAreas{
+  height: 100%;
+  width: 100%;
+}
+.property-social-icons
+{
+  width:1em;
+  height:1em;
+  background-color:black;
+  position:absolute;
+  bottom:1em;
+  left:1em;
+  -webkit-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -o-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+/* Property Cards Hover States */
+
+.property-card:hover .property-description
+{
+  height:0em;
+  padding:0px 1em;
+}
+.property-card:hover .property-image
+{
+  height:18em;
+}
+
+.property-card:hover .property-social-icons
+{
+  background-color:white;
+}
+
+.property-card:hover .property-social-icons:hover
+{
+  background-color:blue;
+  cursor:pointer;
+}
+
+
+/* _______________________________________________________________ */
+
+.cards-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  justify-content: flex-end; /* تحريك البطاقات للأسفل */
+  text-align: right; /* محاذاة النص إلى اليمين */
+}
+
+/* تحديد عناصر البطاقة */
+.card {
+  background: var(--primary-color);
+  color: #fff;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+  text-align: right; /* محاذاة النص إلى اليمين */
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card h1 {
+  margin: 0;
+  font-size: 1.5em;
+  line-height: 1.2em;
+}
+
+.card p {
+  font-size: 0.9em;
+  margin-top: 0.5em;
+  line-height: 1.5em;
+}
+
+.card .tags {
+  display: flex;
+}
+
+.card .tags .tag {
+  font-size: 0.8em;
+  background: var(--secondary-color);
+  border-radius: 0.3rem;
+  padding: 0.3em 0.5em;
+  margin-right: 0.5em;
+  line-height: 1.5em;
+  color: #fff;
+}
+
+.card .date {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 0.75em;
+  padding: 0.5em;
+  line-height: 1em;
+  opacity: .8;
+}
+
+.info {
+  font-size: 1.2em;
+  display: flex;
+  padding: 1em 3em;
+  height: 3em;
+  color: #fff;
+  align-items: center;
+}
+
+.info img {
+  height: 2em;
+  margin-right: 0.5em;
+}
+
+.info h1 {
+  font-size: 1.2em;
+  font-weight: normal;
+}
+
+/* إضافة أنماط لقسم الأنشطة */
+section {
+  margin: 50px;
+}
+
+section h2 {
+  font-size: 2em;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+  text-align: right; /* محاذاة النص إلى اليمين */
+}
+
+section ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+section li {
+  flex: 0 0 calc(33.333% - 1rem);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+section li:hover {
+  transform: scale(1.05);
+}
+
+section img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
+}
+
+section h3 {
+  font-size: 1.2em;
+  margin: 0.5rem;
+  text-align: right;
+}
+
+section p {
+  font-size: 0.8em;
+  margin: 0.5rem;
+  text-align: right;
+}
+
+/* ___________________________________________________________________ */
+
+/* about us */
+
+
+.about {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 150px;
+}
+
+h2 {
+  color: #388e3c; /* Green header color */
+  text-align: right;
+}
+
+p.aboutUs {
+  color: #546e7a; /* Dark grey text color */
+  line-height: 1.6;
+  text-align: right;
+}
+
+/* Add additional styles for your navigation if needed */
+
+/* _______________________________________________________________________ */
+
+/* details page */
+
+/* Add this to your stylesheet */
+.full-width {
+  width: 100%;
+  text-align: right;
+}
+
+.details-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.details-image {
+  width: 100%; /* Ensures the image takes full width */
+}
+
+.img-details {
+  max-width: 100%; /* Ensures the image doesn't exceed its natural size */
+}
+
+.details-description {
+  width: 100%;
+  margin: 0 auto; /* Centers the description within the available width */
+  padding: 20px;
+  font-size: large;
+}
+
+.container-details{
+  display: block;
+  margin: 0;
+  margin-top: 62px;
+}
+
+.tree-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  background-color: #4CAF50; /* لون الخلفية (أخضر غامق) */
+  color: #fff; /* لون النص */
+  border: 1px solid #4CAF50; /* حدود الزر */
+  border-radius: 4px; /* زاوية التقوس للحواف */
+  transition: background-color 0.3s, color 0.3s; /* تأثير انتقالي عند التحويل */
+  margin-right: 26px;
+
+  /* لتحديد الأنماط عند التحويل */
+  cursor: pointer;
+}
+
+/* تغيير الأنماط عند تمرير المؤشر (Hover) */
+.tree-button:hover {
+  background-color: #45a049; /* تغيير لون الخلفية عند التحويل (أخضر أفتح) */
+  color: #fff; /* تغيير لون النص عند التحويل */
+}
+
+
+footer h6{
+  text-align: right;
+}
+
+/* ________________________________________________________________ */
+/* صفحة المساعدة  */
+.donation {
+  text-align: center;
+  color: #007bff;
+  margin-top: 50px;
+}
+
+.donation-discription {
+  max-width: 600px;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0 15px 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px !important;
+  width: 100%;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.donation-heading {
+  color: #28a745; /* لون أخضر متألق */
+  text-align: center;
+}
+
+.donation-description {
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 5px;
+}
+
+input,
+button {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ced4da; /* حدود خفيفة */
+  border-radius: 5px;
+}
+
+button {
+  background-color: #28a745; /* لون زر الإرسال */
+  color: #fff; /* لون النص داخل زر الإرسال */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #218838; /* تغيير لون زر الإرسال عند التحويم */
+}

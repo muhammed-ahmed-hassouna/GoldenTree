@@ -1,0 +1,34 @@
+<!-- views/profile.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="/profile.css"> 
+</head>
+
+<body>
+    <div class="profile-container">
+        <h1>User Profile</h1>
+        <p><strong>Organization Name:</strong>
+            <%= user.orgName %>
+        </p>
+        <p><strong>Email:</strong>
+            <%= user.email %>
+        </p>
+        <p><strong>Address:</strong>
+            <%= user.address %>
+        </p>
+        <!-- Add more fields as needed -->
+
+        <!-- Optional: Add an image if imageName is available -->
+        <% if (user.imageName) { %>
+            <img src="/uploads/<%= user.imageName %>" alt="Profile Image">
+            <% } %>
+    </div>
+</body>
+
+</html>

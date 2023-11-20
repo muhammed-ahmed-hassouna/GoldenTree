@@ -1,0 +1,75 @@
+<!-- views/donations.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donations</title>
+  <!-- Include Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+
+  <div class="container mt-5">
+    <h2>Donations</h2>
+
+    <!-- Filter Form -->
+    <form action="/getAll" method="GET" class="mb-3">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search by title or description" name="search">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="submit">Search</button>
+        </div>
+      </div>
+
+      <!-- Item Type Filter -->
+      <div class="mt-3">
+        <label for="itemType">Filter by Item Type:</label>
+        <select class="form-control" id="itemType" name="itemType">
+          <option value="">All</option>
+          <option value="Tree Planting Kit">Tree Planting Kit</option>
+          <option value="Irrigation Tools">Irrigation Tools</option>
+          <option value="Plant Care Essentials">Plant Care Essentials</option>
+          <option value="Portable Planting Boxes">Portable Planting Boxes</option>
+          <option value="Plants">Plants</option>
+          <option value="Native Tree Seeds">Native Tree Seeds</option>
+          <!-- Add more options based on your item types -->
+        </select>
+      </div>
+    </form>
+
+    <!-- Donations Cards -->
+    <div class="row">
+      <% for (const donation of donations) { %>
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img src="<%= donation.image_url %>" class="card-img-top" alt="Donation Image">
+            <div class="card-body">
+              <h5 class="card-title"><%= donation.title %></h5>
+              <p class="card-text"><%= donation.description %></p>
+              <p class="card-text">Donor Type: <%= donation.donor_type %></p>
+              <!-- Add other fields as needed -->
+            </div>
+          </div>
+        </div>
+      <% } %>
+    </div>
+  </div>
+
+  <!-- Include Bootstrap JS (optional) -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>

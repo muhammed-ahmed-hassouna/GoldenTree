@@ -1,0 +1,22 @@
+<!-- addInKindDonation.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add In-Kind Donation</title>
+</head>
+<body>
+    <h1>Add In-Kind Donation</h1>
+    <form action="http://localhost:5000/:id" method="post">
+        <label for="item_type">Item Type:</label>
+        <input type="text" id="item_type" name="item_type" required>
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" required></textarea>
+
+        <button type="submit">Submit Donation</button>
+    </form>
+</body>
+</html>

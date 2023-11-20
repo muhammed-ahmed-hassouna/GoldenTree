@@ -1,0 +1,29 @@
+<!-- details.ejs -->
+<html lang="ar">
+  <%- include("./partials/head.ejs") %>
+  <body>
+    <%- include("./partials/nav.ejs") %>
+    <section class="container-details full-width">
+      <div>
+        <% console.log(areasAfforestedById) %>
+        <% if (areasAfforestedById) { %>
+          <div class="details-card">
+            <div class="details-image">
+              <img class="img-details" src="<%= areasAfforestedById.image_url %>" alt="<%= areasAfforestedById.placeName %> Image">
+            </div>
+            <div class="details-description">
+              <h2><%= areasAfforestedById.placeName %></h2>
+              <p>الموقع: <%= areasAfforestedById.areasLocation %></p>
+              <p>تاريخ الزراعة: <%= areasAfforestedById.datePlanted %></p>
+              <p>عدد الأشجار المحتاجة: <%= areasAfforestedById.treesPlanted %> شجرة</p>
+              <p>الوصف: <%= areasAfforestedById.descriptionAfforested %></p>
+              <p>الحد الاقصى للتبرع المالي: <%= areasAfforestedById.maxDonationAmount %></p>
+            </div>
+          </div>
+        <% } else { %>
+          <p>لا توجد مناطق مزروعة بعد</p>
+        <% } %>
+      </div>
+      <a href="/buy" class="tree-button">تبرع</a>
+    </section>
+
